@@ -1,0 +1,16 @@
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        # solving by binary search
+        l, r= 0, x
+        res = 0
+        while l<=r:
+            m = l + (r-l)//2
+            if m*m < x:
+                l = m+1
+                res = m
+            elif m*m > x:
+                r = m-1
+            else:
+                return m
+
+        return res
